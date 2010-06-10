@@ -1,0 +1,62 @@
+
+-N 11
+-nlevels 2
+
+-useTmpToBuildRmat 0
+
+-initFromFile 0
+
+-initNumBrokenBonds 0
+
+-maxIts 1
+-stopTol 1e-8
+
+-stiffness 1.0
+
+-useZeroGuess 0
+
+-maxCoarseNpes 1
+
+-ksp_type cg
+-ksp_max_it 1000
+-pc_type mg
+
+-ksp_rtol 1e-10
+-ksp_atol 1e-12
+-ksp_monitor
+-ksp_converged_reason
+%-ksp_view
+
+-pc_mg_type multiplicative
+-pc_mg_multiplicative_cycles 1
+-pc_mg_cycle_type v
+
+-mg_levels_ksp_type richardson
+-mg_levels_ksp_left_pc
+-mg_levels_ksp_richardson_scale 0.667
+
+-mg_levels_ksp_max_it 2
+-mg_levels_pc_type jacobi
+-mg_levels_ksp_rtol 1e-10
+-mg_levels_ksp_atol 1e-12
+
+-mg_coarse_ksp_type preonly
+-mg_coarse_ksp_max_it 1
+-mg_coarse_ksp_rtol 1e-10
+-mg_coarse_ksp_atol 1e-12
+-mg_coarse_pc_type lu
+
+-mg_coarse_private_ksp_type preonly
+-mg_coarse_private_ksp_max_it 1
+-mg_coarse_private_ksp_rtol 1e-10
+-mg_coarse_private_ksp_atol 1e-12
+-mg_coarse_private_pc_type lu
+
+-options_left
+
+-options_table
+
+-log_summary
+
+
+
