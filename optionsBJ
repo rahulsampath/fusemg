@@ -1,0 +1,47 @@
+
+-N 33
+-nlevels 1
+
+-initFromFile 0
+
+-initNumBrokenBonds 0
+
+-maxIts 2
+-stopTol 1e-8
+
+-stiffness 1.0
+
+-useZeroGuess 0
+
+-singleLevelFullMatrix 1
+
+-ksp_type cg
+-ksp_max_it 2
+-ksp_rtol 1e-10
+-ksp_atol 1e-12
+-ksp_monitor
+-ksp_converged_reason
+-ksp_view
+
+-pc_type shell
+-private_ksp_type preonly
+-private_ksp_max_it 1
+-private_ksp_monitor
+-private_ksp_converged_reason
+-private_ksp_rtol 1e-10
+-private_ksp_atol 1e-12
+-private_pc_type bjacobi
+-private_sub_ksp_type preonly
+-private_sub_ksp_max_it 1
+-private_sub_pc_type ilu
+-private_sub_pc_factor_levels 0
+-private_ksp_view
+
+%-options_left
+
+%-options_table
+
+-log_summary
+
+
+
