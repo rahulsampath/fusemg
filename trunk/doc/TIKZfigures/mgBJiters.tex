@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usepackage{pgffor}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\begin{figure}
+\begin{center}
+
+\begin{tikzpicture}[scale=0.75]			
+
+\draw[very thin, color=gray, ->] (-0.15, 0) -- (13, 0);
+\draw[very thin, color=gray, ->] (0, -0.15) -- (0, 10);
+
+\draw (13.5, -0.4) node {{$\times 10^4$}};
+\draw (6, -1.25) node {{Number of broken bonds}};
+\draw[color=white] (-1.5, 4) -- +(90:1) node[midway,sloped,above, color=black]{{Number of CG iterations}};
+
+\draw (3, 4.8) node {{Block-Jacobi}};
+
+\draw (5.5, 0.75) node {{Multigrid}};
+  
+%Draw Row Ticks
+\foreach \pos in {0, 2, ..., 12} {
+\draw[very thin, color=gray] (\pos, -0.1) -- (\pos, 0.1);
+\draw (\pos, -0.4) node {{\pos}};
+}
+
+%Draw Col Ticks
+\foreach \pos/\val in {0/0, 1/20, 2/40, 3/60, 4/80, 5/100, 6/120, 7/140, 8/160, 9/180} {
+\draw[very thin, color=gray] (-0.1, \pos) -- (0.1, \pos);
+\draw (-0.75, \pos) node {{\val}};
+}
+
+\input{mgIters.tex}
+
+\input{bjIters.tex}
+	 		
+\end{tikzpicture} 	
+
+\end{center}
+\end{figure}
+
+\end{document}
+
+
+			

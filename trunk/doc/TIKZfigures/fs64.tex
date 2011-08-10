@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usepackage{pgffor}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\begin{figure}
+\begin{center}
+
+\begin{tikzpicture}[scale=1.0]
+
+\draw[very thin, color=gray, ->] (-0.15, 0) -- (6.5, 0);
+\draw[very thin, color=gray, ->] (0, -0.15) -- (0, 8.5);
+
+\draw (3.25, -1) node {{Number of CPUs}};
+\draw[color=white] (-1.2, 4) -- +(90:1) node[midway,sloped,above, color=black]{{Run-time in seconds}};
+
+%Draw Row Ticks
+\foreach \pos/\val in {0/1, 1/2, 2/4, 3/8, 4/16, 5/32, 6/64} {
+\draw[very thin, color=gray] (\pos, -0.1) -- (\pos, 0.1);
+\draw (\pos, -0.4) node {{\val}};
+}
+
+%Draw Col Ticks
+\foreach \pos/\val in {0/150, 1/263, 2/460, 3/804, 4/1407, 5/2462, 6/4308, 7/7540, 8/13195} {
+\draw[very thin, color=gray] (-0.1, \pos) -- (0.1, \pos);
+\draw (-0.2, \pos) node[left] {{\val}};
+}
+
+%Draw legend
+
+\path (-1, 1.75) coordinate (offb);
+
+\draw (offb) ++ (3.25, 4.6) rectangle ++ (2.75, 2.2);
+\draw (offb) ++ (3.75, 4.95) node[right] {MG Last};
+\draw (offb) ++ (3.75, 5.7) node[right] {MG Middle};
+\draw (offb) ++ (3.75, 6.45) node[right] {MG First};
+
+\draw (offb) ++ (3.6, 4.95) node {$\circ$};
+\draw (offb) ++ (3.6, 5.7) node {$\bullet$};
+\draw (offb) ++ (3.6, 6.45) node {$\star$};
+
+\path (0.75, -0.6) coordinate (offa);
+
+\draw (offa) ++ (3.25, 4.6) rectangle ++ (2.5, 2.2);
+\draw (offa) ++ (3.75, 4.95) node[right] {BJ Last};
+\draw (offa) ++ (3.75, 5.7) node[right] {BJ Middle};
+\draw (offa) ++ (3.75, 6.45) node[right] {BJ First};
+
+\draw (offa) ++ (3.6, 4.95) node {$\triangle$};
+\draw (offa) ++ (3.6, 5.7) node {$\diamond$};
+\draw (offa) ++ (3.6, 6.45) node {$\times$};
+
+\input{mgfs64first}
+\input{mgfs64middle}
+\input{mgfs64last}
+
+\input{bjfs64first}
+\input{bjfs64middle}
+\input{bjfs64last}
+
+\end{tikzpicture} 
+
+\end{center}
+\end{figure}
+
+\end{document}
+			
