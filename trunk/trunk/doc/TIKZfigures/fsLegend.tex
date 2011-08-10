@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usepackage{pgffor}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{trees}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\begin{figure}
+\begin{center}
+
+\begin{tikzpicture}[scale=1.0]
+
+%Draw legend
+\draw (3.25, 4.5) rectangle ++ (3.5, 4.75);
+\draw (3.75, 5) node[right] {BJ Last};
+\draw (3.75, 5.75) node[right] {BJ Middle};
+\draw (3.75, 6.5) node[right] {BJ First};
+\draw (3.75, 7.25) node[right] {MG Last};
+\draw (3.75, 8) node[right] {MG Middle};
+\draw (3.75, 8.75) node[right] {MG First};
+
+\draw (3.6, 5) node {$\triangle$};
+\draw (3.6, 5.75) node {$\diamond$};
+\draw (3.6, 6.5) node {$\times$};
+\draw (3.6, 7.25) node {$\circ$};
+\draw (3.6, 8) node {$\bullet$};
+\draw (3.6, 8.75) node {$\star$};
+
+\end{tikzpicture} 
+
+\end{center}
+\end{figure}
+
+\end{document}
+			
